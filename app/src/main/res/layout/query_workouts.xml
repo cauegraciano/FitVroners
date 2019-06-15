@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="550dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="277dp"
+        android:layout_height="89dp"
+        android:text="Treinos"
+        android:textSize="80sp"
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="65dp"
+        android:layout_height="66dp"
+        android:adjustViewBounds="true"
+        app:barrierAllowsGoneWidgets="true"
+        app:srcCompat="@drawable/return"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="17dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="?android:attr/colorSwitchThumbNormal"
+        app:srcCompat="@drawable/baseline_add_black_48dp"
+        tools:layout_editor_absoluteX="328dp"
+        tools:layout_editor_absoluteY="494dp" />
+
+</android.support.constraint.ConstraintLayout>
