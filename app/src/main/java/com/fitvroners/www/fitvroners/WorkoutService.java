@@ -20,9 +20,9 @@ public class WorkoutService {
     private HttpURLConnection connection;
 
     public WorkoutService(){
-//        this.baseUrl = "http://10.0.2.2:8080";
-         this.baseUrl = "http://192.168.4.180:8080";
-        this.repositoryName = "movies";
+       this.baseUrl = "http://10.0.2.2:8080";
+        //this.baseUrl = "http://192.168.4.180:8080";
+        this.repositoryName = "workouts";
         this.fullUrl = this.baseUrl+"/"+this.repositoryName;
     }
 
@@ -101,7 +101,7 @@ public class WorkoutService {
 
     }
 
-    public void deleteMovie(String id) {
+    public void deleteWorkout(String id) {
 
         String url = this.baseUrl+"/"+this.repositoryName+"/"+id;
 

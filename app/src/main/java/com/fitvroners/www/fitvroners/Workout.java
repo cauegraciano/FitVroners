@@ -2,19 +2,25 @@ package com.fitvroners.www.fitvroners;
 
 public class Workout {
 
-    String id;
+    private String id;
     private String title;
     private int duration;
     private double calories;
     private String user;
     private String treino;
 
-    public Workout(String title, int duration, double calories, String user, String treino) {
-        this.title = title;
-        this.duration = duration;
-        this.calories = calories;
-        this.user = user;
-        this.treino = treino;
+//    public Workout(String title, int duration, double calories, String user, String treino) {
+//    public Workout(String id, String title, int duration, String treino) {
+//        this.id = id;
+//        this.title = title;
+//        this.duration = duration;
+//        this.calories = calories;
+//        this.user = user;
+//        this.treino = treino;
+//    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getId() {

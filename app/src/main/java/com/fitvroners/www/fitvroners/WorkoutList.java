@@ -1,15 +1,16 @@
 package com.fitvroners.www.fitvroners;
 
 import android.content.Intent;
-import android.graphics.Movie;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
 import java.util.List;
 
-public class WorkoutList extends AppCompatActivity implements onWorkoutClickListener<Workout> {
+
+public class WorkoutList extends AppCompatActivity implements OnWorkoutClickListener<Workout> {
 
     private RecyclerView list;
 
@@ -23,9 +24,9 @@ public class WorkoutList extends AppCompatActivity implements onWorkoutClickList
     }
 
     @Override
-    public void onWorkoutClick(Workout workout) {
+    public void onWorkoutCLick(Workout w) {
         Intent workoutInfo = new Intent(this, WorkoutInfo.class);
-        workoutInfo.putExtra("workoutId", workout.getId());
+        workoutInfo.putExtra("workoutId", w.getId());
         startActivity(workoutInfo);
         // Toast.makeText(this,movie.getId(),Toast.LENGTH_SHORT).show();
     }
@@ -41,22 +42,20 @@ public class WorkoutList extends AppCompatActivity implements onWorkoutClickList
 
         @Override
         protected List<Workout> doInBackground(Void... voids) {
-            WorkoutService wks = new WorkoutService();
-            List<Workout> workouts = wks.getAll();
+            WorkoutService mvs = new WorkoutService();
+            List<Workout> workouts = mvs.getAll();
             return workouts;
         }
         @Override
-        protected void onPostExecute(List<Movie> movies){
+        protected void onPostExecute(List<Workout> workouts){
             list = findViewById(R.id.list);
 
-            RecyclerView.Adapter<WorkoutListAdapter.MovieListViewHolder> adapter = new WorkoutListAdapter(movies, onWorkoutClickListener);
+            RecyclerView.Adapter<WorkoutListAdapter.WorkoutListViewHolder> adapter = new WorkoutListAdapter(workouts, onWorkoutClickListener);
 
             RecyclerView.LayoutManager manager = new LinearLayoutManager(getApplicationContext());
             list.setLayoutManager(manager);
             list.setHasFixedSize(true);
             list.setAdapter(adapter);
-
-
         }
     }
 }

@@ -44,13 +44,13 @@ public class WorkoutInfo extends AppCompatActivity {
             TextView duration = findViewById(R.id.duration);
             TextView calories = findViewById(R.id.calories);
             TextView user = findViewById(R.id.user);
-            TextView workout = findViewById(R.id.workout);
+            TextView workoutElm = findViewById(R.id.workout);
 
             title.setText("Titulo: " + workout.getTitle());
             duration.setText("Duração: " + workout.getDuration());
             calories.setText("Calorias: " + workout.getCalories());
             user.setText("Usuario: " + workout.getUser());
-            workout.setText("Treino: " + workout.getTreino());
+            workoutElm.setText("Treino: " + workout.getTreino());
         }
     }
 
@@ -71,8 +71,8 @@ public class WorkoutInfo extends AppCompatActivity {
         }
 
         protected void onPostExecute() {
-//            Intent movieList = new Intent(WorkoutInfo.class, MovieList.class);
-//            startActivity(movieList);
+//            Intent workoutList = new Intent(WorkoutInfo.class, WorkoutList.class);
+//            startActivity(workoutList);
             System.out.println("concluido");
         }
     }

@@ -7,14 +7,14 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="157dp"
-        android:layout_height="72dp"
+        android:id="@+id/textView8"
+        android:layout_width="203dp"
+        android:layout_height="71dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/treinosTitle"
+        android:text="Histórico"
         android:textColor="#000000"
         android:textSize="120px"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
@@ -22,16 +22,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.012" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="491dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
 </android.support.constraint.ConstraintLayout>

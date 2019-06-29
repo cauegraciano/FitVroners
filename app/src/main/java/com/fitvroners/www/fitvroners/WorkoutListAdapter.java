@@ -8,33 +8,33 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class WorkoutListAdapter extends RecyclerView.Adapter<WorkoutListAdapter.MovieListViewHolder> {
+public class WorkoutListAdapter extends RecyclerView.Adapter<WorkoutListAdapter.WorkoutListViewHolder> {
 
-    List<Movie> movies;
+    List<Workout> workouts;
     OnWorkoutClickListener onWorkoutClickListener;
 
-    WorkoutListAdapter(List<Movie> movies, OnWorkoutClickListener onWorkoutClickListener) {
-        this.movies = movies;
+    WorkoutListAdapter(List<Workout> workouts, OnWorkoutClickListener onWorkoutClickListener) {
+        this.workouts = workouts;
         this.onWorkoutClickListener = onWorkoutClickListener;
     }
 
     @Override
-    public MovieListViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View movieItem = LayoutInflater
+    public WorkoutListViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View workoutitem = LayoutInflater
                 .from(viewGroup.getContext())
                 .inflate(R.layout.workout_item_list, viewGroup, false);
-        return new MovieListViewHolder(movieItem);
+        return new WorkoutListViewHolder(workoutitem);
     }
 
     @Override
-    public void onBindViewHolder( MovieListViewHolder movieListViewHolder, int i) {
-        final Movie m = this.movies.get(i);
-        movieListViewHolder.year.setText(Integer.toString(m.getYear()));
-        movieListViewHolder.title.setText(m.getTitle());
-        movieListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder( WorkoutListViewHolder workoutListViewHolder, int i) {
+        final Workout w = this.workouts.get(i);
+        workoutListViewHolder.title.setText(w.getTitle());
+        workoutListViewHolder.treino.setText(w.getTreino());
+        workoutListViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onWorkoutClickListener.onMovieClick(m);
+                onWorkoutClickListener.onWorkoutCLick(w);
             }
         });
 
@@ -42,21 +42,21 @@ public class WorkoutListAdapter extends RecyclerView.Adapter<WorkoutListAdapter.
 
     @Override
     public int getItemCount() {
-        if (this.movies != null) {
-            return this.movies.size();
+        if (this.workouts != null) {
+            return this.workouts.size();
         }
         return 0;
     }
 
-    public class MovieListViewHolder extends RecyclerView.ViewHolder{
+    public class WorkoutListViewHolder extends RecyclerView.ViewHolder{
 
         TextView title;
-        TextView year;
+        TextView treino;
 
-        public MovieListViewHolder(View itemView) {
+        public WorkoutListViewHolder(View itemView) {
             super(itemView);
             this.title = itemView.findViewById(R.id.xtitle);
-            this.year = itemView.findViewById(R.id.xyear);
+            this.treino = itemView.findViewById(R.id.xworkout);
         }
     }
 }
